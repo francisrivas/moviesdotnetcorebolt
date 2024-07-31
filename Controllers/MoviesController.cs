@@ -21,7 +21,7 @@ public class MoviesController : ControllerBase
     public Task<Movie> GetMovieDetails([FromRoute] string title)
     {
         if (title == "favicon.ico")
-            return null;
+            return Task.FromResult<object>(null);
 
         title = System.Net.WebUtility.UrlDecode(title);
         return _movieRepository.FindByTitle(title);
