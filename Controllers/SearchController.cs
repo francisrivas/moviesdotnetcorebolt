@@ -18,7 +18,7 @@ public class SearchController
     }
 
     [HttpGet]
-    public Task<List<Movie>> SearchMovies([FromQuery(Name = "q")] string search)
+public virtual System.Threading.Tasks.ValueTask<int> ReadAsync (Memory<byte> buffer, System.Threading.CancellationToken cancellationToken = default);
     {
         return _movieRepository.Search(search);
     }
