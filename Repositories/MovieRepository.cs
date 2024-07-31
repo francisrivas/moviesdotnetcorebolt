@@ -25,7 +25,7 @@ public class MovieRepository : IMovieRepository
     public MovieRepository(IDriver driver)
     {
         var versionStr = Environment.GetEnvironmentVariable("NEO4J_VERSION") ?? "";
-        if( double.TryParse(versionStr, out var version) && version >= 4.0)
+        if (double.TryParse(versionStr, out var version) && version >= 4.0)
         {
             _queryConfig = new QueryConfig(database: Environment.GetEnvironmentVariable("NEO4J_DATABASE") ?? "movies");
         }
